@@ -3,20 +3,26 @@
 "===========================================
 let mapleader=" "
 
-noremap <leader>k gt
-noremap <leader>j gT 
-
 set showmode
 set showcmd
 set wildmenu
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 set surround
 set multi-cursors
-
+set scrolloff=5
 
 set clipboard+=unnamed
-
-nnoremap / :action Find<CR>
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+nnoremap <leader><cr> :nohlsearch<cr>
+"nnoremap / :action Find<CR>
 " goto some
 nnoremap <leader>gc :action GotoClass<CR>
 nnoremap <leader>gf :action GotoFile<CR>
@@ -27,7 +33,6 @@ nnoremap <Leader>rc :action ChooseRunConfiguration<CR>
 nnoremap g/ <esc>:action FindInPath<cr>
 nnoremap [[ <esc>:action MethodUp<cr>
 nnoremap ]] <esc>:action MethodDown<cr>
-nnoremap <leader>f <esc>:action AceAction<cr>
 " debug
 nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
 nnoremap <Leader>br :action ViewBreakpoints<CR>
@@ -38,12 +43,25 @@ noremap H 5h
 noremap L 5l
 
 
-
+" window move
 map <leader>h <c-w>h
 map <leader>j <c-w>j
 map <leader>k <c-w>k
 map <leader>l <c-w>l
+map <leader><leader> <esc>/<++><cr>:nohlsearch<cr>c4l
 map ; :
 map s <nop>
 map Q :q<cr>
+" select all
 nnoremap <leader>sa ggVG
+
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+noremap gr <ESC>:action RecentFiles<CR>
+" 移动文件到下一个分屏
+nnoremap <C-M> :action MoveEditorToOppositeTabGroup<CR>
+
+" emacsIdeas
+" nnoremap <leader>s <esc>:action emacsIDEAs.AceJumpSelect<CR>
+nnoremap <leader>f <esc>:action emacsIDEAs.AceJumpWord<CR>
+" nnoremap <leader>y <esc>:action emacsIDEAs.AceJumpCopy<CR>
