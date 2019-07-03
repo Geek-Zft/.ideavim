@@ -22,7 +22,6 @@ set incsearch
 set ignorecase
 set smartcase
 nnoremap <leader><cr> :nohlsearch<cr>
-"nnoremap / :action Find<CR>
 " goto some
 nnoremap <leader>gc :action GotoClass<CR>
 nnoremap <leader>gf :action GotoFile<CR>
@@ -62,6 +61,4 @@ noremap gr <ESC>:action RecentFiles<CR>
 nnoremap <C-M> :action MoveEditorToOppositeTabGroup<CR>
 
 " emacsIdeas
-" nnoremap <leader>s <esc>:action emacsIDEAs.AceJumpSelect<CR>
 nnoremap <leader>f <esc>:action emacsIDEAs.AceJumpWord<CR>
-" nnoremap <leader>y <esc>:action emacsIDEAs.AceJumpCopy<CR>
